@@ -99,3 +99,9 @@ p {
   overflow-y: auto;
   max-height: 300px; /* Adjust the height as needed */
 }
+
+.cedarville-cursive-regular {
+  font-family: "Cedarville Cursive", serif;
+  font-weight: 400;
+  font-style: normal;
+}
