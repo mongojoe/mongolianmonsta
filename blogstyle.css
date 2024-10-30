@@ -51,7 +51,8 @@ p {
 }
 
 #team {
- font-family: "Kanti";   
+ font-family: "Kanit", serif;
+ weight: 900px;
 }
 
 .main {
