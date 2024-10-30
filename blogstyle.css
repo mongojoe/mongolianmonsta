@@ -45,6 +45,11 @@ p {
   text-indent: 10%;
 }
 
+div .sport{
+ display: flex;
+ justify-content: space-between;
+}
+
 .main {
   margin-left: 15%;
   margin-right: 15%;
