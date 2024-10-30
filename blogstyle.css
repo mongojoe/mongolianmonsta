@@ -45,7 +45,7 @@ p {
   text-indent: 10%;
 }
 
-.sport{
+.sport {
  display: flex;
  justify-content: space-between;
 }
