@@ -45,9 +45,13 @@ p {
   text-indent: 10%;
 }
 
-.sport {
+#sport {
  display: flex;
  justify-content: space-between;
+}
+
+#team {
+ font-family: "Kanti";   
 }
 
 .main {
