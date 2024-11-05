@@ -45,6 +45,13 @@ p {
   text-indent: 10%;
 }
 
+footer {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 10px 0;
+}
+
 #sport {
  display: flex;
  justify-content: space-around;
