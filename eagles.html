@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Eagles’ Trivia</title>
+  </head>
+  <body>
+   <h1>Eagles’ Trivia</h1>
+   <form action="process.php" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br>
+
+    <p>Question 1: Who is the statue in front of the Eagles stadium and what does it represent?</p>
+    <ul>
+      <li>
+        <input type="radio" id="q1a" name="question1" value="Nick Foles. In Shotgun Formation">
+        <label for="q1a">Nick Foles. In Shotgun Formation</label>
+      </li>
+      <li>
+        <input type="radio" id="q1b" name="question1" value="Doug Peterson, and Nick Foles. Philly Special.">
+        <label for="q1b">Doug Peterson, and Nick Foles. Philly Special.</label>
+      </li>
+      <li>
+        <input type="radio" id="q1c" name="question1" value="Vince Papale. Running back a Touchdown.">
+        <label for="q1c">Vince Papale. Running back a Touchdown.</label>
+      </li>
+    </ul>
+
+    <p>Question 2: How times have the Eagles won the NFC Championship, and how many MVP’s?</p>
+    <ul>
+      <li>
+        <input type="radio" id="q2a" name="question2" value="3 NFC Championships. 2 MVPs">
+        <label for="q2a">3 NFC Championships. 2 MVPs</label>
+      </li>
+      <li>
+        <input type="radio" id="q2b" name="question2" value="6 NFC Championships. 3 MVPs">
+        <label for="q2b">6 NFC Championships. 3 MVPs</label>
+      </li>
+      <li>
+        <input type="radio" id="q2c" name="question2" value="4 NFC Championships. 1 MVP.">
+        <label for="q2c">4 NFC Championships. 1 MVP</label>
+      </li>
+    </ul>
+
+    <input type="submit" value="Submit Answers">
+  </form>
+</body>
+</html>
