@@ -54,6 +54,10 @@ img {
     width: 100px;
 }
 
+a {
+    width: 90px;
+}
+
 #sport {
  display: flex;
  justify-content: space-around;
