@@ -51,7 +51,9 @@ footer {
     padding: 10px 0;
 }
 
-
+img {
+    width: 100px;
+}
 
 #sport {
  display: flex;
