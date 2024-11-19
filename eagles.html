@@ -169,5 +169,57 @@
 
     <a href="blog_index.html"><h3>Submit</h3></a>
   </form>
+    
+<script>
+	   // right answers
+function checkAnswers() {
+   const answers = [
+      “B”,
+      “C”,
+      “B”,
+      “B”,
+      “B”,
+      “A”,
+      “B”,
+      “C”,
+      “A”,
+      “B”,
+];
+
+const userAnswers = [];
+  const numQuestions = answers.length;
+  let correctAnswers = 0;
+
+  // Get user answers from the form (adjust selectors as needed)
+  for (let i = 1; i <= numQuestions; i++) {
+    const userAnswer = document.querySelector(`input[name="question${i}"]:checked`).value;
+    userAnswers.push(userAnswer);
+
+    if (userAnswer === answers[i - 1]) {
+      correctAnswers++;
+    }
+  }
+
+  // Calculate the percentage score
+  const percentageScore = (correctAnswers / numQuestions) * 100;
+
+  // Display the results
+  const resultDiv = document.getElementById("result");
+  resultDiv.innerHTML = `
+    <h2>Your Score: ${percentageScore.toFixed(2)}%</h2>
+    <p>You got ${correctAnswers} out of ${numQuestions} correct.</p>
+    <ul>
+  `;
+
+  for (let i = 0; i < numQuestions; i++) {
+    if (userAnswers[i] !== answers[i]) {
+      resultDiv.innerHTML += `<li>Question ${i + 1}: Incorrect. The correct answer is ${answers[i]}</li>`;
+    }
+  }
+
+  resultDiv.innerHTML += "</ul>";
+}
+
+   </script>
 </body>
 </html>
