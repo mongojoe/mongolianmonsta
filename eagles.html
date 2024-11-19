@@ -167,59 +167,41 @@
       </li>
     </ul>
 
-    <a href="blog_index.html"><h3>Submit</h3></a>
+    <input type="button" value="Submit" onclick="checkAnswers()">
   </form>
+
+  <div id="result"></div>
     
-<script>
-	   // right answers
-function checkAnswers() {
-   const answers = [
-      “B”,
-      “C”,
-      “B”,
-      “B”,
-      “B”,
-      “A”,
-      “B”,
-      “C”,
-      “A”,
-      “B”,
-];
+ <script>
+    function checkAnswers() {
+      const correctAnswers = ["B", "C", "B", "B", "B", "A", "B", "C", "A", "B"];
+      const userAnswers = [];
 
-const userAnswers = [];
-  const numQuestions = answers.length;
-  let correctAnswers = 0;
+      for (let i = 1; i <= 10; i++) {
+        const userChoice = document.querySelector(`input[name="question${i}"]:checked`);
+        userAnswers.push(userChoice ? userChoice.value : null);
+      }
 
-  // Get user answers from the form (adjust selectors as needed)
-  for (let i = 1; i <= numQuestions; i++) {
-    const userAnswer = document.querySelector(`input[name="question${i}"]:checked`).value;
-    userAnswers.push(userAnswer);
+      let score = 0;
+      for (let i = 0; i < 10; i++) {
+        if (userAnswers[i] === correctAnswers[i]) {
+          score++;
+        }
+      }
 
-    if (userAnswer === answers[i - 1]) {
-      correctAnswers++;
+      const percentage = (score / 10) * 100;
+      const resultDiv = document.getElementById("result");
+      resultDiv.innerHTML = `
+        <h2>Your Score: ${percentage}%</h2>
+        <p>You got ${score} out of 10 correct.</p>
+      `;
+
+      // Delay the redirection for 3 seconds
+      setTimeout(() => {
+        window.location.href = "blog_index.html"; // Replace with your desired URL
+      }, 3000);
     }
-  }
+  </script>
 
-  // Calculate the percentage score
-  const percentageScore = (correctAnswers / numQuestions) * 100;
-
-  // Display the results
-  const resultDiv = document.getElementById("result");
-  resultDiv.innerHTML = `
-    <h2>Your Score: ${percentageScore.toFixed(2)}%</h2>
-    <p>You got ${correctAnswers} out of ${numQuestions} correct.</p>
-    <ul>
-  `;
-
-  for (let i = 0; i < numQuestions; i++) {
-    if (userAnswers[i] !== answers[i]) {
-      resultDiv.innerHTML += `<li>Question ${i + 1}: Incorrect. The correct answer is ${answers[i]}</li>`;
-    }
-  }
-
-  resultDiv.innerHTML += "</ul>";
-}
-
-   </script>
 </body>
 </html>
