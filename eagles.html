@@ -191,9 +191,8 @@
 
       const percentage = (score / 10) * 100;
 
-      // Create a new div to display the score and feedback
-      const scoreDisplay = document.createElement('div');
-      scoreDisplay.innerHTML = `
+      // Display the score and feedback directly in the result div
+      document.getElementById("result").innerHTML = `
         <h2>Your Score: ${percentage}%</h2>
         <p>You got ${score} out of 10 correct.</p>
         <p>Here's a breakdown of your answers:</p>
@@ -202,14 +201,13 @@
 
       for (let i = 0; i < 10; i++) {
         if (userAnswers[i] === correctAnswers[i]) {
-          scoreDisplay.innerHTML += `<li>Question ${i + 1}: Correct!</li>`;
+          document.getElementById("result").innerHTML += `<li>Question ${i + 1}: Correct!</li>`;
         } else {
-          scoreDisplay.innerHTML += `<li>Question ${i + 1}: Incorrect. The correct answer was ${correctAnswers[i]}</li>`;
+          document.getElementById("result").innerHTML += `<li>Question ${i + 1}: Incorrect. The correct answer was ${correctAnswers[i]}</li>`;
         }
       }
 
-      scoreDisplay.innerHTML += '</ul>';
-      document.body.appendChild(scoreDisplay);
+      document.getElementById("result").innerHTML += '</ul>';
 
       // Delay the redirection for 3 seconds
       setTimeout(() => {
@@ -217,6 +215,7 @@
       }, 3000);
     }
   </script>
+
 
 </body>
 </html>
