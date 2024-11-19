@@ -172,7 +172,7 @@
 
   <div id="result"></div>
     
- <script>
+    <script>
     function checkAnswers() {
       const correctAnswers = ["B", "C", "B", "B", "B", "A", "B", "C", "A", "B"];
       const userAnswers = [];
@@ -194,6 +194,7 @@
       resultDiv.innerHTML = `
         <h2>Your Score: ${percentage}%</h2>
         <p>You got ${score} out of 10 correct.</p>
+        <p>Redirecting in 3 seconds...</p>
       `;
 
       // Delay the redirection for 3 seconds
